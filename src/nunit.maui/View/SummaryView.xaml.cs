@@ -39,11 +39,12 @@ namespace NUnit.Runner.View
             _model.Navigation = Navigation;
             BindingContext = _model;
             InitializeComponent();
+            //@zhouyang add for see result when run at android
             model.PropertyChanged += (sender, e) =>
               {
                   if(model.HasResults == true)
                   {
-                      System.Diagnostics.Debug.WriteLine("Has Result");
+                      System.Diagnostics.Debug.WriteLine("Has Result:");
                       System.Diagnostics.Debug.WriteLine($"{nameof(model.Results.FailureCount)}:{model.Results.FailureCount}");
                       System.Diagnostics.Debug.WriteLine($"{nameof(model.Results.ErrorCount)}:{model.Results.ErrorCount}");
                       System.Diagnostics.Debug.WriteLine($"{nameof(model.Results.PassCount)}:{model.Results.PassCount}");

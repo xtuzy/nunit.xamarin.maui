@@ -50,6 +50,7 @@ namespace NUnit.Runner.Tests
         [Author("Code Monkey")]
         public void Fail()
         {
+            //@zhouyang here have bug
             Assert.False(true);
         }
 
