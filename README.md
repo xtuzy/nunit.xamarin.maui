@@ -1,7 +1,7 @@
 # NUnit 3 Maui Runners
 
 Here i update [old xamarin runner](https://github.com/nunit/nunit.xamarin/issues) to maui,old project like died, i don't know this project how to work, so no many change.
-at ios,windows work, at android not work.
+*Notice! At android not work, only at ios and windows work*. I don't know why it can't be fail at android, app like be freeze.
 
 # NUnit 3 Xamarin Runners
 
