@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="NUnit.Runner.View.ResultsView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Test Results"
+    Padding="0"
+    BackgroundColor="{DynamicResource defaultBackground}">
+    <StackLayout
+        BackgroundColor="{DynamicResource defaultBackground}"
+        Orientation="Vertical"
+        Spacing="4">
+        <ScrollView
+            HorizontalOptions="FillAndExpand"
+            Orientation="Vertical"
+            VerticalOptions="FillAndExpand">
+            <ListView
+                HasUnevenRows="true"
+                HorizontalOptions="FillAndExpand"
+                ItemSelected="ViewTest"
+                ItemsSource="{Binding Results}"
+                VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout
+                                    Padding="0"
+                                    BackgroundColor="White"
+                                    HorizontalOptions="StartAndExpand"
+                                    Orientation="Horizontal"
+                                    Spacing="4">
+                                    <BoxView
+                                        VerticalOptions="FillAndExpand"
+                                        WidthRequest="10"
+                                        Color="{Binding Color}" />
+                                    <StackLayout
+                                        Padding="4"
+                                        HorizontalOptions="StartAndExpand"
+                                        Orientation="Vertical"
+                                        Spacing="4">
+                                        <Label FontSize="Medium" Text="{Binding Name}" />
+                                        <Label
+                                            FontSize="Small"
+                                            LineBreakMode="MiddleTruncation"
+                                            Text="{Binding Parent}"
+                                            TextColor="#4C4C4C" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>
