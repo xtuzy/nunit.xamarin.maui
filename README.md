@@ -1,3 +1,8 @@
+# NUnit 3 Maui Runners
+
+Here i update [old xamarin runner](https://github.com/nunit/nunit.xamarin/issues) to maui,old project like died, i don't know this project how to work, so no many change.
+at ios,windows work, at android not work.
+
 # NUnit 3 Xamarin Runners
 
 [![Build status](https://ci.appveyor.com/api/projects/status/4972j2pn4mqs7j8n/branch/master?svg=true)](https://ci.appveyor.com/project/CharliePoole/nunit-xamarin/branch/master)[![NuGet Version and Downloads count](https://buildstats.info/nuget/nunit.xamarin?includePreReleases=true)](https://www.nuget.org/packages/nunit.xamarin)
