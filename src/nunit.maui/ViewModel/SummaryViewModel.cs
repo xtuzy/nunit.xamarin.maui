@@ -138,6 +138,7 @@ namespace NUnit.Runner.ViewModel
         {
             Running = true;
             Results = null;
+
             TestRunResult results = await _testPackage.ExecuteTests();
             ResultSummary summary = new ResultSummary(results);
 

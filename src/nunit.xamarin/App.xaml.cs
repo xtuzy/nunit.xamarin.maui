@@ -32,15 +32,15 @@ namespace NUnit.Runner
     /// <summary>
     /// The NUnit Xamarin test runner
     /// </summary>
-	public partial class App : Application
+    public partial class App : Application
     {
         private readonly SummaryViewModel _model;
 
         /// <summary>
         /// Constructs a new app adding the current assembly to be tested
         /// </summary>
-		public App ()
-		{
+        public App (List<Assembly> assemblies)
+        {
             InitializeComponent ();
 
             if(Device.RuntimePlatform == Device.UWP)
@@ -50,9 +50,12 @@ namespace NUnit.Runner
 
             _model = new SummaryViewModel();
             MainPage = new NavigationPage(new SummaryView(_model));
-#if !NETFX_CORE
-            AddTestAssembly(Assembly.GetCallingAssembly());
-#endif
+
+            //AddTestAssembly(Assembly.GetCallingAssembly());
+            foreach (var assembly in assemblies) 
+            { 
+                AddTestAssembly(assembly);
+            }
         }
 
         /// <summary>

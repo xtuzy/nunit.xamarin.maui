@@ -22,7 +22,9 @@
 // ***********************************************************************
 
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using Foundation;
 
 using NUnit.Runner.Services;
@@ -49,7 +51,10 @@ namespace NUnit.Runner.Tests
             global::Xamarin.Forms.Forms.Init();
 
             // This will load all tests within the current project
-            var nunit = new NUnit.Runner.App();
+            var nunit = new NUnit.Runner.App(new List<Assembly>()
+                {
+                    typeof(NUnit.Runner.Tests.TestsSample).Assembly,
+                });
 
             // If you want to add tests in another assembly
             //nunit.AddTestAssembly(typeof(MyTests).Assembly);

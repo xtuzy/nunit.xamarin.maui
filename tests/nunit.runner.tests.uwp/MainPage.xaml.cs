@@ -35,15 +35,18 @@ namespace NUnit.Runner.Tests
 
             // Windows Universal will not load all tests within the current project,
             // you must do it explicitly below
-            var nunit = new NUnit.Runner.App();
+            var nunit = new NUnit.Runner.App(new List<Assembly>()
+                {
+                    typeof(NUnit.Runner.Tests.TestsSample).Assembly,
+                });
 
             // If you want to add tests in another assembly, add a reference and
             // duplicate the following line with a type from the referenced assembly
             //nunit.AddTestAssembly(typeof(MainPage).GetTypeInfo().Assembly);
             // Or, if you want to add tests with an extra test options dictionary
-            var parameters = new Dictionary<string, string> { { "Parameter", "Value" } };
-            nunit.AddTestAssembly(typeof(MainPage).GetTypeInfo().Assembly, 
-                new Dictionary<string, object> { { FrameworkPackageSettings.TestParametersDictionary, parameters} });
+            //var parameters = new Dictionary<string, string> { { "Parameter", "Value" } };
+            //nunit.AddTestAssembly(typeof(MainPage).GetTypeInfo().Assembly, 
+            //    new Dictionary<string, object> { { FrameworkPackageSettings.TestParametersDictionary, parameters} });
 
             // Available options for testing
             nunit.Options = new TestOptions

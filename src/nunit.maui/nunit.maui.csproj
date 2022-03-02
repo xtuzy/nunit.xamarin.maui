@@ -15,15 +15,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-
-  </ItemGroup>
-
-  <ItemGroup>
-  
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="NUnit" Version="4.0.0-dev-07301" />
+    <PackageReference Include="NUnit" Version="3.13.2" />
   </ItemGroup>
 
 

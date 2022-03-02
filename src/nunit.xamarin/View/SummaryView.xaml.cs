@@ -30,16 +30,16 @@ namespace NUnit.Runner.View
     /// <summary>
     /// The main Xamarin.Forms view of the application
     /// </summary>
-	public partial class SummaryView : ContentPage
-	{
+    public partial class SummaryView : ContentPage
+    {
         SummaryViewModel _model;
 
         internal SummaryView (SummaryViewModel model)
-		{
+        {
             _model = model;
-		    _model.Navigation = Navigation;
-		    BindingContext = _model;
-			InitializeComponent();
+            _model.Navigation = Navigation;
+            BindingContext = _model;
+            InitializeComponent();
 
             MessagingCenter.Subscribe<ErrorMessage>(this, ErrorMessage.Name, error => {
                 Device.BeginInvokeOnMainThread(async () => await DisplayAlert("Error", error.Message, "OK"));

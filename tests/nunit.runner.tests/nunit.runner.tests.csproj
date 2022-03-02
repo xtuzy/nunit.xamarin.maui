@@ -1,14 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net6.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Properties\**"></Compile>
-    <None Remove="nunit.runner.tests.projitems"/>
+    <None Remove="nunit.runner.tests.projitems" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="NUnit" Version="4.0.0-dev-07301" />
+    <PackageReference Include="NUnit" Version="3.13.2" />
   </ItemGroup>
 </Project>

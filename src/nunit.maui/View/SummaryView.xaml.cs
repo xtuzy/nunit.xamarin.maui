@@ -39,7 +39,17 @@ namespace NUnit.Runner.View
             _model.Navigation = Navigation;
             BindingContext = _model;
             InitializeComponent();
-
+            model.PropertyChanged += (sender, e) =>
+              {
+                  if(model.HasResults == true)
+                  {
+                      System.Diagnostics.Debug.WriteLine("Has Result");
+                      System.Diagnostics.Debug.WriteLine($"{nameof(model.Results.FailureCount)}:{model.Results.FailureCount}");
+                      System.Diagnostics.Debug.WriteLine($"{nameof(model.Results.ErrorCount)}:{model.Results.ErrorCount}");
+                      System.Diagnostics.Debug.WriteLine($"{nameof(model.Results.PassCount)}:{model.Results.PassCount}");
+                      System.Diagnostics.Debug.WriteLine($"{nameof(model.Results.IgnoreCount)}:{model.Results.IgnoreCount}");
+                  }
+              };
             MessagingCenter.Subscribe<ErrorMessage>(this, ErrorMessage.Name, error => {
                 Device.BeginInvokeOnMainThread(async () => await DisplayAlert("Error", error.Message, "OK"));
             });

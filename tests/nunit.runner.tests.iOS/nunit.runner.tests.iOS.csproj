@@ -13,6 +13,7 @@
     <AssemblyName>nunit.runner.tests.iOS</AssemblyName>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <ProvisioningType>automatic</ProvisioningType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -89,6 +90,9 @@
     <CodesignKey>iPhone Distribution</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <AppExtensionDebugBundleId />
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
@@ -129,6 +133,10 @@
     <ProjectReference Include="..\..\src\nunit.xamarin\nunit.xamarin.csproj">
       <Project>{a9479ad9-ee64-4590-927c-ffdc13ac7c70}</Project>
       <Name>nunit.xamarin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\nunit.runner.tests\nunit.runner.tests.csproj">
+      <Project>{59e07ed4-6b43-4e86-bb17-3a1a68662c53}</Project>
+      <Name>nunit.runner.tests</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

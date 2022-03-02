@@ -29,13 +29,13 @@ namespace NUnit.Runner.View
     /// Xamarin.Forms view of a list of test results
     /// </summary>
     public partial class ResultsView : ContentPage
-	{
-		internal ResultsView (ResultsViewModel model)
+    {
+        internal ResultsView (ResultsViewModel model)
         {
             model.Navigation = Navigation;
             BindingContext = model;
             InitializeComponent();
-		}
+        }
 
         internal async void ViewTest(object sender, SelectedItemChangedEventArgs e)
         {
@@ -43,5 +43,5 @@ namespace NUnit.Runner.View
                 if (result != null)
                     await Navigation.PushAsync(new TestView(new TestViewModel(result.TestResult)));
         }
-	}
+    }
 }
